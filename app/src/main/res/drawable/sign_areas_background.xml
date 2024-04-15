@@ -1,0 +1,11 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <stroke
+        android:width="2dp"
+        android:color="@color/colorBlue" /> <!-- Stroke rengi ve kalınlığı (Açık mavi renk) -->
+
+    <corners
+        android:radius="20dp" /> <!-- Köşelerin yuvarlatılması -->
+
+</shape>

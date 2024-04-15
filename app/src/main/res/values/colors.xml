@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBlue">#04E6F3</color>
+    <color name="update_button_color">#00FF04</color>
+    <color name="primary_text_color">#111219</color>
+    <color name="secondary_text_color">#FF0000</color>
+    <color name="background_color">#FDD7D7</color>
+    <color name="card_color">#FDFCFC</color>
+    <color name="delete_button_color">#FF0000</color>
+
+
+
+    <style name="BlueTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <!-- Arka plan rengi -->
+
+    <!-- Kenarlık rengi -->
+    <item name="boxStrokeColor" >#04E6F3</item>
+</style>
+
+    <style name="Widget.AppCompat.Button.OutlinedButton" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:background">@drawable/btn_border</item>
+    </style>
+
+</resources>
