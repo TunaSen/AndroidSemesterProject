@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yeni Rapor"
+        android:textSize="30dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewRecipient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:padding="8dp">
+
+
+
+
+        <Spinner
+            android:id="@+id/spinnerRecipientNewReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/report_scope_options" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewCourseId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:padding="8dp">
+
+        <Spinner
+            android:id="@+id/spinnerCourseIdNewReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewScope"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:padding="8dp">
+
+        <Spinner
+            android:id="@+id/spinnerScopeNewReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/report_scope_options" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/editTextSubjectNewReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Subject" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewMessage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/editTextMessageNewReport"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Message"
+            android:inputType="textMultiLine" />
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        >
+        <Button
+            android:id="@+id/NewReportButtonSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send" />
+        <Button
+            android:id="@+id/NewReportButtonMailSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send With Mail" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

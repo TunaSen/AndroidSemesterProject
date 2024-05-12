@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/CardViewCoursesInfoCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    android:layout_margin="8dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/textViewCourseName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Android Programlama"
+                    android:textStyle="bold"
+                    android:layout_marginRight="5dp"
+                    />
+
+                <TextView
+                    android:id="@+id/textViewCourseId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(BLM20234)"
+                    android:textColor="@color/secondary_text_color"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:paddingStart="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Semseter : "
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/textViewSemester"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2024"
+                    android:textColor="@color/colorBlue"
+                    android:textStyle="bold"
+                    />
+
+
+
+            </LinearLayout>
+
+
+            <!-- Kurs bilgileri burada olacak -->
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kurucusu  : "
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textViewCourseInstructor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Amaç Güvensan"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tarih : "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewCourseDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pazartesi 09:00-12:00"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+
+
+            <TextView
+                android:id="@+id/textViewCourseStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="active"
+                android:textStyle="bold" />
+
+            <!-- Diğer kurs bilgileri buraya eklenmeli -->
+
+        </LinearLayout>
+
+</androidx.cardview.widget.CardView>

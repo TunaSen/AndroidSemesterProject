@@ -39,9 +39,10 @@ import android.app.AlertDialog;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class Account extends AppCompatActivity {
 
-    Button buttonUpdate,buttonDelete;
+    Button buttonUpdate,buttonDelete,buttonBack;
     EditText editTextTel,editTextFacebook,editTextInstagram,editTextTwitter,editTextPassword,editTextMail,editTextEducation;
     Boolean isEditableFlag=Boolean.TRUE;
 
@@ -65,6 +66,7 @@ public class Account extends AppCompatActivity {
 
         buttonUpdate=findViewById(R.id.buttonUpdate);
         buttonDelete=findViewById(R.id.buttonDelete);
+        buttonBack=findViewById(R.id.buttonBack);
 
 
         editTextTel=findViewById(R.id.editTextTel);
@@ -145,7 +147,13 @@ public class Account extends AppCompatActivity {
             }
         }
 
-
+buttonBack.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent= new Intent(getApplicationContext(),MainPage.class);
+        startActivity(intent);
+    }
+});
 
 buttonDelete.setOnClickListener(new View.OnClickListener() {
     @Override
@@ -155,13 +163,12 @@ buttonDelete.setOnClickListener(new View.OnClickListener() {
                 .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
                         db.collection("users").document(String.valueOf(sharedPreferences.getString("id","")))
                                 .delete()
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
-                                        // Silme işlemi başarılı oldu
+                                        // Deletion successful
                                         Intent intent= new Intent(getApplicationContext(),MainActivity.class);
                                         startActivity(intent);
                                     }
@@ -169,10 +176,12 @@ buttonDelete.setOnClickListener(new View.OnClickListener() {
                                 .addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
-                                        // Silme işlemi başarısız oldu
-                                        Toast.makeText(Account.this, "Error deleting document: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                        // Deletion failed
+                                        Toast.makeText(Account.this, "Error deleting document: " , Toast.LENGTH_SHORT).show();
+
                                     }
                                 });
+
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -434,17 +443,22 @@ buttonDelete.setOnClickListener(new View.OnClickListener() {
                     String userId=sharedPreferences.getString("id","");
                     db.collection("users")
                             .document(userId)
-                            .set(data, SetOptions.merge())
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            .set(data, SetOptions.merge()).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Log.d("TAG", "Belge başarıyla güncellendi.");
+                                        Log.d("TAG", "Document updated successfully.");
                                     } else {
-                                        Log.w("TAG", "Belge güncelleme hatası: ", task.getException());
+                                        // Check if there's an exception before logging it
+                                        if (task.getException() != null) {
+                                            Log.w("TAG", "Error updating document: ", task.getException());
+                                        }
                                     }
                                 }
                             });
+
+
+
 
 
 

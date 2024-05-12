@@ -23,6 +23,24 @@
         android:theme="@style/Theme.SemesterProject"
         tools:targetApi="31">
         <activity
+            android:name=".ListingReports"
+            android:exported="false" />
+        <activity
+            android:name=".StudentReporting"
+            android:exported="false" />
+        <activity
+            android:name=".AddStd"
+            android:exported="false" />
+        <activity
+            android:name=".newCourse"
+            android:exported="false" />
+        <activity
+            android:name=".CourseDetail"
+            android:exported="false" />
+        <activity
+            android:name=".courses"
+            android:exported="false" />
+        <activity
             android:name=".UserList"
             android:exported="false" />
         <activity

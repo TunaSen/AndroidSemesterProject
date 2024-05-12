@@ -69,18 +69,28 @@ public class MainPage extends AppCompatActivity {
 
                         Toast.makeText(getApplicationContext(), "Home clicked", Toast.LENGTH_SHORT).show();
 
-                    } else if (ItemId == R.id.menu_search) {
+                    } else if (ItemId == R.id.courses) {
                         Toast.makeText(getApplicationContext(), "menu_search clicked", Toast.LENGTH_SHORT).show();
+                        Intent intent= new Intent(getApplicationContext(),courses.class);
+                        startActivity(intent);
 
-
-                    } else if (ItemId == R.id.menu_notifications) {
-                        Toast.makeText(getApplicationContext(), "menu_notifications clicked", Toast.LENGTH_SHORT).show();
-
-
-                    } else if (ItemId == R.id.users) {
+                    }else if (ItemId == R.id.users) {
                         Toast.makeText(getApplicationContext(), "users clicked", Toast.LENGTH_SHORT).show();
                         Intent intent= new Intent(getApplicationContext(),UserList.class);
                         startActivity(intent);
+
+
+                    }else if (ItemId == R.id.reporting) {
+                        if(sharedPreferences.getString("role","").equals("std")){
+                            Intent intent= new Intent(getApplicationContext(),StudentReporting.class);
+                            startActivity(intent);
+                        }
+                        else{
+                            Intent intent= new Intent(getApplicationContext(),ListingReports.class);
+                            startActivity(intent);
+                        }
+
+
 
                     }
                     return false;

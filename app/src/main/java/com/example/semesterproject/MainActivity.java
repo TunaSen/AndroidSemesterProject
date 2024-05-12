@@ -1,9 +1,11 @@
 package com.example.semesterproject;
+import java.util.concurrent.CompletableFuture;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -49,11 +51,13 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
 
 
         TextChangeSignUpArea = findViewById(R.id.TextChangeSignUpArea);
@@ -121,8 +125,18 @@ public class MainActivity extends AppCompatActivity {
                                             String facebook = document.getString("facebook") != null ? document.getString("facebook") : defaultStringValue;
                                             String education = document.getString("education") != null ? document.getString("education") : defaultStringValue;
                                             String profileImageUrl = document.getString("profileImageUrl") != null ? document.getString("profileImageUrl") : "https://isobarscience-1bfd8.kxcdn.com/wp-content/uploads/2020/09/default-profile-picture1.jpg";
-                                            String role = document.getString("role") != null ? document.getString("role") : defaultStringValue;
-
+                                            String role;
+                                            if (document.getString("role") == null) {
+                                                // Eğer role null ise ve userEmail içeriyorsa role değeri std olsun
+                                                assert userEmail != null;
+                                                if (userEmail.contains("std")) {
+                                                    role = "std";
+                                                } else {
+                                                    role = "ins";
+                                                }
+                                            } else {
+                                                role = document.getString("role");
+                                            }
                                             int facebookActive = document.getLong("facebookActive") != null ? document.getLong("facebookActive").intValue() : defaultIntValue;
                                             int mailActive = document.getLong("mailActive") != null ? document.getLong("mailActive").intValue() : defaultIntValue;
                                             int twitterActive = document.getLong("twitterActive") != null ? document.getLong("twitterActive").intValue() : defaultIntValue;
@@ -182,6 +196,7 @@ public class MainActivity extends AppCompatActivity {
                 if (role != null) {
 
 
+
                     HashMap<String, String> newUser = new HashMap<>();
                     newUser.put("name", Objects.requireNonNull(editTextName.getText()).toString());
                     newUser.put("surname", Objects.requireNonNull(editTextSurname.getText()).toString());
@@ -202,7 +217,6 @@ public class MainActivity extends AppCompatActivity {
                                         Toast.makeText(MainActivity.this, "Kayıt Başarısız", Toast.LENGTH_SHORT).show();
 
                                     }
-                                    return ;
                                 }
                             });
 

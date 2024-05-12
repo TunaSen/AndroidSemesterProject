@@ -457,19 +457,30 @@
             android:backgroundTint="@color/update_button_color"
             android:text="Güncelle"
             android:textColor="@color/primary_text_color"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
         <!-- Sil Butonu -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonDelete"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="0dp"
             android:layout_weight="1"
             android:backgroundTint="@color/delete_button_color"
             android:text="Sil"
             android:textColor="@color/primary_text_color"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorBlue"
+            android:text="Geri"
+            android:textColor="@color/primary_text_color"
+            android:textSize="14sp" />
     </LinearLayout>
 
 

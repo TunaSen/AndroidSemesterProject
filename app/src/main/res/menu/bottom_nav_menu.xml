@@ -8,18 +8,12 @@
         android:enabled="true"/>
 
     <item
-        android:id="@+id/menu_search"
-        android:title="Search"
-        android:icon="@drawable/ic_search"
+        android:id="@+id/reporting"
+        android:title="Home"
+        android:icon="@drawable/report_icon"
         app:showAsAction="always"
         android:enabled="true"/>
 
-    <item
-        android:id="@+id/menu_notifications"
-        android:title="Notifications"
-        android:icon="@drawable/ic_notification"
-        app:showAsAction="always"
-        android:enabled="true"/>
 
     <item
         android:id="@+id/users"
@@ -27,4 +21,15 @@
         android:icon="@drawable/ic_users"
         app:showAsAction="always"
         android:enabled="true"/>
+
+    <item
+        android:id="@+id/courses"
+        android:title="Courses"
+        android:icon="@drawable/course"
+        app:showAsAction="always"
+        android:enabled="true"/>
+
+
+
+
 </menu>
